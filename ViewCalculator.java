@@ -1,74 +1,85 @@
 import java.util.Scanner;
 
+/**
+ * Класс, представляющий интерфейс для калькулятора комплексных чисел.
+ */
 public class ViewCalculator {
-    private  iCalculator calculator;
+    private iCalculator calculator;
 
-    public ViewCalculator( iCalculator calculator) {
+    /**
+     * Конструктор класса ViewCalculator.
+     *
+     * @param calculator объект, реализующий интерфейс iCalculator
+     */
+    public ViewCalculator(iCalculator calculator) {
         this.calculator = calculator;
     }
-
+    /**
+     * Метод для запуска калькулятора комплексных чисел.
+     */
     public void run() {
         while (true) {
-            double realPart = promptInt("Введите первое число комплексного числа: ");
-            double imaginaryPart  = promptInt("Введите второе число комплексного числа: ");
+            double realPart = promptDouble("Введите первое число комплексного числа: ");
+            double imaginaryPart = promptDouble("Введите второе число комплексного числа: ");
             ComplexNumber num1 = new ComplexNumber(realPart, imaginaryPart);
             calculator.sum(num1);
             while (true) {
+                String cmd = prompt("Введите операцию:( ' * ' >> умножение, ' + ' >> сложение, ' - ' >> вычитание, ' / ' >> деление): ");
+                double realPart2 = promptDouble("Введите первое число комплексного числа: ");
+                double imaginaryPart2 = promptDouble("Введите второе число комплексного числа: ");
+                ComplexNumber num2 = new ComplexNumber(realPart2, imaginaryPart2);
+                switch (cmd) {
+                    case "*":
+                        calculator.multi(num2);
+                        break;
 
+                    case "/":
 
-                String cmd = prompt("Введите операцию:( ' * ' >> умножение, ' + ' >> сложение, ' - ' >> вычитание, ' / ' >> деление, ' = ' >> получить результат): ");
-                if (cmd.equals("*")) {
-                    double realPart2 = promptInt("Введите первое число комплексного числа: ");
-                    double imaginaryPart2  =  promptInt("Введите второе число комплексного числа: ");
-                    ComplexNumber num2 = new ComplexNumber(realPart2, imaginaryPart2);
-                    calculator.multi(num2);
-                    continue;
-                }
-                if (cmd.equals("/")) {
-                    double realPart2 = promptInt("Введите первое число комплексного числа: ");
-                    double imaginaryPart2  = promptInt("Введите второе число комплексного числа: ");
-                    ComplexNumber num2 = new ComplexNumber(realPart2, imaginaryPart2);
-                    calculator.division(num2);
-                    continue;
-                }
-                if (cmd.equals("-")) {
-                    double realPart2 = promptInt("Введите первое число комплексного числа: ");
-                    double imaginaryPart2  = promptInt("Введите второе число комплексного числа: ");
-                    ComplexNumber num2 = new ComplexNumber(realPart2, imaginaryPart2);
-                    calculator.subtract(num2);
-                    continue;
-                }
-                if (cmd.equals("+")) {
-                    double realPart2 = promptInt("Введите первое число комплексного числа: ");
-                    double imaginaryPart2  = promptInt("Введите второе число комплексного числа: ");
-                    ComplexNumber num2 = new ComplexNumber(realPart2, imaginaryPart2);
-                    calculator.sum(num2);
-                    continue;
-                }
+                        calculator.division(num2);
+                        break;
 
-                 if (cmd.equals("=")) {
-                    ComplexNumber result = calculator.getResult();
-                    System.out.println("Результат: " + result.getReal() + " + " + result.getImaginary() + "i");
-                    break;
+                    case "-":
+
+                        calculator.subtract(num2);
+                        break;
+
+                    case "+":
+
+                        calculator.sum(num2);
+                        break;
+
+                    default:
+                        System.out.println("Некорректная операция. Попробуйте снова.");
+                }
+                ComplexNumber result4 = calculator.getResult();
+                System.out.println("Результат: " + result4.getReal() + " + " + result4.getImaginary() + "i");
+                String answer= prompt("Еще посчитать (Y/N)?");
+                if (!answer.equals("Y")) {
+                    return;
                 }
             }
-            String cmd = prompt("Еще посчитать (Y/N)?");
-            if (cmd.equals("Y")) {
-                continue;
-            }
-            break;
         }
     }
-
+    /**
+     * Метод для запроса ввода пользователя.
+     *
+     * @param message сообщение для вывода пользователю
+     * @return введенная пользователем строка
+     */
     private String prompt(String message) {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
         return in.nextLine();
     }
-
-    private int promptInt(String message) {
+    /**
+     * Метод для запроса ввода числа с плавающей точкой от пользователя.
+     *
+     * @param message сообщение для вывода пользователю
+     * @return введенное пользователем число с плавающей точкой
+     */
+    private double promptDouble(String message) {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
-        return Integer.parseInt(in.nextLine());
+        return Double.parseDouble(in.nextLine());
     }
 }

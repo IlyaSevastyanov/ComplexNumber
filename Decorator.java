@@ -1,7 +1,15 @@
+/**
+ * Класс Декоратор для калькулятора, который добавляет логирование операций.
+ */
 public class Decorator implements iCalculator {
     private iCalculator calculator;
     private Logger logger;
 
+    /**
+     * Конструктор класса декоратор.
+     * @param calculator Калькулятор, который будет декорирован.
+     * @param logger Логгер для записи операций.
+     */
     public Decorator(iCalculator calculator, Logger logger) {
         this.calculator = calculator;
         this.logger = logger;

@@ -1,10 +1,19 @@
+/**
+ * Класс, представляющий калькулятор для работы с комплексными числами.
+ */
 public class CalculatorComplexNumber implements iCalculator {
     private ComplexNumber result;
-
+    /**
+     * Конструктор по умолчанию. Устанавливает начальное значение результата в 0.
+     */
     public CalculatorComplexNumber() {
         this.result = new ComplexNumber(0, 0);
     }
-
+    /**
+     * Метод сложения.
+     * @param arg Комплексное число для сложения.
+     * @return результат сложения комплексных чисел.
+     */
     @Override
     public iCalculator sum(ComplexNumber arg) {
         double realPart = this.result.getReal() + arg.getReal();
@@ -12,7 +21,11 @@ public class CalculatorComplexNumber implements iCalculator {
         this.result = new ComplexNumber(realPart, imaginaryPart);
         return this;
     }
-
+    /**
+     * Метод умножения.
+     * @param arg Комплексное число для умножения.
+     * @return результат умножения комплексных чисел.
+     */
     @Override
     public iCalculator multi(ComplexNumber arg) {
         double realPart = this.result.getReal() * arg.getReal() - this.result.getImaginary() *arg.getImaginary() ;
@@ -20,7 +33,11 @@ public class CalculatorComplexNumber implements iCalculator {
         this.result = new ComplexNumber(realPart, imaginaryPart);
         return this;
     }
-
+    /**
+     * Метод деления.
+     * @param arg Комплексное число для деления.
+     * @return результат деления комплексных чисел.
+     */
     @Override
     public iCalculator division(ComplexNumber arg) {
         double denominator = arg.getReal() * arg.getReal() + arg.getImaginary() * arg.getImaginary();
@@ -29,7 +46,11 @@ public class CalculatorComplexNumber implements iCalculator {
         this.result = new ComplexNumber(realPart, imaginaryPart);
         return this;
     }
-
+    /**
+     * Метод вычитания.
+     * @param arg Комплексное число для вычитания.
+     * @return результат вычитания комплексных чисел.
+     */
     @Override
     public iCalculator subtract(ComplexNumber arg) {
         double realPart = this.result.getReal() - arg.getReal();
@@ -39,7 +60,11 @@ public class CalculatorComplexNumber implements iCalculator {
     }
 
 
-
+    /**
+     * Метод для получения результата операций в виде комплексного числа.
+     *
+     * @return Результат операций в виде объекта ComplexNumber.
+     */
     @Override
     public ComplexNumber getResult() {
         return this.result;
