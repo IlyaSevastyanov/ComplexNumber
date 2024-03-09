@@ -47,10 +47,12 @@ public class Decorator implements iCalculator {
         logger.log(String.format("Первое значение калькулятора: %f + %fi. Начало вызова метода subtract с параметром: %f + %fi",
                 firstArg.getReal(), firstArg.getImaginary(), arg.getReal(), arg.getImaginary()));
 
-        iCalculator result = calculator.division(arg);
+        iCalculator result = calculator.subtract(arg);
         logger.log("Вызов метода subtract произошел");
         return result;
     }
+
+
 
     @Override
     public ComplexNumber getResult() {

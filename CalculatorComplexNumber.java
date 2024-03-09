@@ -38,6 +38,8 @@ public class CalculatorComplexNumber implements iCalculator {
         return this;
     }
 
+
+
     @Override
     public ComplexNumber getResult() {
         return this.result;

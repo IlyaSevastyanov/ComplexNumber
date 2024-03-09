@@ -16,10 +16,10 @@ public class ViewCalculator {
             while (true) {
 
 
-                String cmd = prompt("Введите операцию (* - умножение, + - сложение, = - получить результат): ");
+                String cmd = prompt("Введите операцию:( ' * ' >> умножение, ' + ' >> сложение, ' - ' >> вычитание, ' / ' >> деление, ' = ' >> получить результат): ");
                 if (cmd.equals("*")) {
                     double realPart2 = promptInt("Введите первое число комплексного числа: ");
-                    double imaginaryPart2  = promptInt("Введите второе число комплексного числа: ");
+                    double imaginaryPart2  =  promptInt("Введите второе число комплексного числа: ");
                     ComplexNumber num2 = new ComplexNumber(realPart2, imaginaryPart2);
                     calculator.multi(num2);
                     continue;
