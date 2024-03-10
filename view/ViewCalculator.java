@@ -1,3 +1,7 @@
+package view;
+
+import interfaces.iCalculator;
+import services.ComplexNumber;
 import java.util.Scanner;
 
 /**
@@ -7,9 +11,9 @@ public class ViewCalculator {
     private iCalculator calculator;
 
     /**
-     * Конструктор класса ViewCalculator.
+     * Конструктор класса view.ViewCalculator.
      *
-     * @param calculator объект, реализующий интерфейс iCalculator
+     * @param calculator объект, реализующий интерфейс interfaces.iCalculator
      */
     public ViewCalculator(iCalculator calculator) {
         this.calculator = calculator;

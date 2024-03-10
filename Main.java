@@ -1,3 +1,8 @@
+import domen.CalculatorComplexNumber;
+import services.Decorator;
+import services.Logger;
+import view.ViewCalculator;
+
 /**
  * Основной класс программы.
  */

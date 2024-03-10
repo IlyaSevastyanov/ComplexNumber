@@ -1,3 +1,7 @@
+package interfaces;
+
+import services.ComplexNumber;
+
 /**
  * Интерфейс для калькулятора комплексных чисел.
  */
