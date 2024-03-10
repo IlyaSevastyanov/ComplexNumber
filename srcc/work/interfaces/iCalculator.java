@@ -1,6 +1,6 @@
-package interfaces;
+package srcc.work.interfaces;
 
-import services.ComplexNumber;
+import srcc.work.services.ComplexNumber;
 
 /**
  * Интерфейс для калькулятора комплексных чисел.

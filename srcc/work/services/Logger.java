@@ -1,4 +1,4 @@
-package services;
+package srcc.work.services;
 
 /**
  * класс для логирования сообщений в консоль.

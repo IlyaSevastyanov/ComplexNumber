@@ -1,7 +1,6 @@
-package services;
+package srcc.work.services;
 
-import interfaces.iCalculator;
-import services.ComplexNumber;
+import srcc.work.interfaces.iCalculator;
 
 /**
  * Класс Декоратор для калькулятора, который добавляет логирование операций.

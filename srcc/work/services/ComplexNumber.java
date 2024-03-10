@@ -1,4 +1,4 @@
-package services;
+package srcc.work.services;
 
 /**
  * Класс редставляет комплексное число с действительной и мнимой частями.

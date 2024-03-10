@@ -1,7 +1,8 @@
-package view;
+package srcc.work.view;
 
-import interfaces.iCalculator;
-import services.ComplexNumber;
+import srcc.work.interfaces.iCalculator;
+import srcc.work.services.ComplexNumber;
+
 import java.util.Scanner;
 
 /**
@@ -11,9 +12,9 @@ public class ViewCalculator {
     private iCalculator calculator;
 
     /**
-     * Конструктор класса view.ViewCalculator.
+     * Конструктор класса src.srcc.work.view.ViewCalculator.
      *
-     * @param calculator объект, реализующий интерфейс interfaces.iCalculator
+     * @param calculator объект, реализующий интерфейс src.srcc.work.view.interfaces.iCalculator
      */
     public ViewCalculator(iCalculator calculator) {
         this.calculator = calculator;

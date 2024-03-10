@@ -1,7 +1,7 @@
-package domen;
+package srcc.work.domen;
 
-import interfaces.iCalculator;
-import services.ComplexNumber;
+import srcc.work.interfaces.iCalculator;
+import srcc.work.services.ComplexNumber;
 
 /**
  * Класс, представляющий калькулятор для работы с комплексными числами.
@@ -68,7 +68,7 @@ public class CalculatorComplexNumber implements iCalculator {
     /**
      * Метод для получения результата операций в виде комплексного числа.
      *
-     * @return Результат операций в виде объекта services.ComplexNumber.
+     * @return Результат операций в виде объекта src.srcc.work.view.services.ComplexNumber.
      */
     @Override
     public ComplexNumber getResult() {

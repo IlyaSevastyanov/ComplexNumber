@@ -1,7 +1,7 @@
-import domen.CalculatorComplexNumber;
-import services.Decorator;
-import services.Logger;
-import view.ViewCalculator;
+import srcc.work.domen.CalculatorComplexNumber;
+import srcc.work.services.Decorator;
+import srcc.work.services.Logger;
+import srcc.work.view.ViewCalculator;
 
 /**
  * Основной класс программы.
